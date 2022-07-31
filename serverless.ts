@@ -10,6 +10,9 @@ const serverlessConfiguration: AWS = {
     name: "aws",
     runtime: "nodejs14.x",
     stage: "${opt:stage, 'dev'}",
+    eventBridge:{
+      useCloudFormation: true,
+    },
     deploymentBucket: {//PROPIEDAD PARA DECIRLE QUE BUCKET USAR
       name: "${ssm:/digital/s3-bucket-deployment-name-${self:provider.stage}}",
       serverSideEncryption: "AES256",
