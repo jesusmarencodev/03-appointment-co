@@ -73,6 +73,13 @@
                     "logs:PutLogEvents"
                   ],
                   "Resource": "arn:aws:logs:*:*:*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:*"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Appointment-dev"
                 }
               ]
             }
@@ -87,7 +94,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "digital-test-ttaa-jdmp-adev",
-          "S3Key": "serverless/appointment-co/dev/1659288034201-2022-07-31T17:20:34.201Z/appointment.zip"
+          "S3Key": "serverless/appointment-co/dev/1660072795039-2022-08-09T19:19:55.039Z/appointment.zip"
         },
         "Handler": "src/functions/appointment/handler.appointmentHandler",
         "Runtime": "nodejs14.x",
@@ -111,14 +118,14 @@
         "AppointmentLogGroup"
       ]
     },
-    "AppointmentLambdaVersionab5N8I35KRWhRz6E9dB2vqanAasK7HilZq7BecFhQ": {
+    "AppointmentLambdaVersionqVmMpRHGCNjmLn9NmtoTBPJtr9idoprOQ5wlKZULc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppointmentLambdaFunction"
         },
-        "CodeSha256": "0tr3/tBtffMEFPT4SkBTrUzJfV66Wt23Cvrz/TEll/w="
+        "CodeSha256": "yLRjAoxQW9km844rVqFDX8tcjFoOOLn9V17Y7ZaNxv4="
       }
     },
     "Appointmentcodevappointmentrule1EventBridgeRule": {
@@ -197,7 +204,7 @@
     "AppointmentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppointmentLambdaVersionab5N8I35KRWhRz6E9dB2vqanAasK7HilZq7BecFhQ"
+        "Ref": "AppointmentLambdaVersionqVmMpRHGCNjmLn9NmtoTBPJtr9idoprOQ5wlKZULc"
       },
       "Export": {
         "Name": "sls-appointment-co-dev-AppointmentLambdaFunctionQualifiedArn"
